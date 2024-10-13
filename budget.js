@@ -1,16 +1,20 @@
-$(document).ready(function() {
-    gapi.load('client', function() {
+$(document).ready(() => {
+    gapi.load('client', () => {
         gapi.client.init({
             'apiKey': 'AIzaSyA6GNo9Kbz8ojuAq8g4pYQcNYzVVp2yCNU'
-        }).then(function() {
-        // 3. Initialize and make the API request.
+        }).then(() => {
             return gapi.client.request({
               'path': 'https://sheets.googleapis.com/v4/spreadsheets/1J7GDw2LZI2VVYNdQS5qCWouRF2krGv53ihJ6iXZYMWY/values/Funds!A3:D',
             })
-        }).then(function(response) {
+        }).then((response) => {
             console.log(response.result);
+            response.result.values.forEach((row) => {
+                if (row.length > 0) {
+                    $('#table').append('<tr><td>' + row[0] + '</td><td>' + row[3] + '</td></tr>');
+                }
+            });
             $('#test').text("Tester3");
-        }, function(reason) {
+        }, (reason) => {
             console.log('Error: ' + reason.result.error.message);
         });
     });
