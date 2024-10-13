@@ -9,7 +9,7 @@ $(document).ready(() => {
         }).then((response) => {
             console.log(response.result);
             response.result.values.forEach((row) => {
-                if (row.length > 0) {
+                if (row.length > 0 && !row[1]) {
                     let style = '';
                     
                     if (row[3].includes('-')) {
