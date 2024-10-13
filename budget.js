@@ -8,8 +8,13 @@ $(document).ready(() => {
             })
         }).then((response) => {
             console.log(response.result);
+            let stop = false;
             response.result.values.forEach((row) => {
-                if (row.length > 0 && !row[1]) {
+                if (!stop) {
+                    if (row.length == 0) {
+                        stop = true;
+                    }
+                    
                     let style = '';
                     
                     if (row[3].includes('-')) {
