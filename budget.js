@@ -10,7 +10,13 @@ $(document).ready(() => {
             console.log(response.result);
             response.result.values.forEach((row) => {
                 if (row.length > 0) {
-                    $('#table').append('<tr><td>' + row[0] + '</td><td>' + row[3] + '</td></tr>');
+                    let style = '';
+                    
+                    if (row[3].includes('-')) {
+                        style += 'color:red';
+                    }
+                    
+                    $('#table').append('<tr style=\'' + style + '\'><td>' + row[0] + '</td><td>' + row[3] + '</td></tr>');
                 }
             });
             $('#test').text("Tester3");
