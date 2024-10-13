@@ -9,7 +9,7 @@ $(document).ready(function() {
             })
         }).then(function(response) {
             console.log(response.result);
-            $('#test').text("Tester2");
+            $('#test').text("Tester3");
         }, function(reason) {
             console.log('Error: ' + reason.result.error.message);
         });
