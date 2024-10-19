@@ -4,7 +4,7 @@ $(document).ready(() => {
             'apiKey': 'AIzaSyA6GNo9Kbz8ojuAq8g4pYQcNYzVVp2yCNU'
         }).then(() => {
             return gapi.client.request({
-              'path': 'https://sheets.googleapis.com/v4/spreadsheets/1vKHZzgwLFO9m05j1zFCVbljER3jrc-7H_bkz6mP300c/values/Funds!A3:D',
+              'path': 'https://sheets.googleapis.com/v4/spreadsheets/1vKHZzgwLFO9m05j1zFCVbljER3jrc-7H_bkz6mP300c/values/Funds!A3:G',
             })
         }).then((response) => {
             console.log(response.result);
