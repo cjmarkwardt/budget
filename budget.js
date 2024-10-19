@@ -11,7 +11,7 @@ $(document).ready(() => {
             response.result.values.forEach((row) => {
                 let style = '';
                 
-                if (row[3].includes('-')) {
+                if (row[1].includes('-')) {
                     style += 'color:red';
                 }
                 
